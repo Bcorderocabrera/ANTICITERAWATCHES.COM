@@ -140,10 +140,15 @@
     <section id="contacto" class="waitlist">
         <h2 class="section-title">Primeros <span>Lanzamientos</span></h2>
         <p style="color: var(--text-muted); margin-bottom: 30px;">Regístrate para recibir acceso exclusivo a los primeros renders, especificaciones de modelos y fechas de lanzamiento oficiales.</p>
-        <form onsubmit="event.preventDefault(); alert('¡Gracias por unirte a ANTICITERA! Te notificaremos pronto.');">
-            <input type="email" placeholder="Tu correo electrónico..." required>
-            <button type="submit">Unirme</button>
-        </form>
+        <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="ca254016-b53c-41ff-bf2b-aab4c513086e">
+  
+  <div style="margin-bottom: 15px;">
+    <input type="email" name="email" placeholder="Tu correo electrónico" required style="padding: 12px; width: 100%; max-width: 400px; background: #111; border: 1px solid #444; color: #fff; font-size: 16px;">
+  </div>
+  
+  <button type="submit" style="padding: 12px 30px; background: #f0a500; border: none; font-weight: bold; cursor: pointer; font-size: 16px;">ENVIAR</button>
+</form>
     </section>
     <footer>
         <p>&copy; 2026 ANTICITERA Watch Co. Todos los derechos reservados.</p>
