@@ -1,1 +1,152 @@
-# ANTICITERAWATCHES.COM
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTICITERA | The Art of Time</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0a0a;
+            --bg-card: #141414;
+            --titanium: #8a9197;
+            --titanium-dark: #2a2d30;
+            --bronze: #c59b27;
+            --bronze-light: #dfb13b;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        header { position: fixed; top: 0; width: 100%; background-color: rgba(10, 10, 10, 0.9); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; z-index: 1000; border-bottom: 1px solid var(--titanium-dark); }
+        .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--text-main); }
+        
+        .logo-img { 
+            height: 45px !important; 
+            width: auto !important; 
+            max-height: 45px !important;
+            display: block !important;
+            filter: drop-shadow(0 0 5px rgba(197, 155, 39, 0.3)); 
+        }
+
+        .logo-text { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: 3px; }
+        .logo-text span { color: var(--bronze); }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; text-transform: uppercase; }
+        nav a:hover { color: var(--bronze); }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: radial-gradient(circle at center, #1a1c1e 0%, var(--bg-deep) 70%); position: relative; }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 15px; color: var(--text-main); }
+        .hero p { font-size: 1.2rem; color: var(--bronze); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; font-weight: 300; }
+        .btn-primary { background: transparent; color: var(--text-main); border: 2px solid var(--bronze); padding: 14px 35px; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .btn-primary:hover { background-color: var(--bronze); color: var(--bg-deep); box-shadow: 0 0 20px rgba(197, 155, 39, 0.4); }
+        section { padding: 100px 10%; }
+        .section-title { font-family: 'Syncopate', sans-serif; font-size: 2rem; text-align: center; margin-bottom: 60px; letter-spacing: 3px; color: var(--text-main); }
+        .section-title span { color: var(--bronze); }
+        .philosophy { background-color: var(--bg-card); border-top: 1px solid var(--titanium-dark); border-bottom: 1px solid var(--titanium-dark); text-align: center; max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+        .philosophy p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+        .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .spec-card { background-color: var(--bg-card); border: 1px solid var(--titanium-dark); padding: 40px 30px; text-align: center; transition: border-color 0.3s; }
+        .spec-card:hover { border-color: var(--bronze); }
+        .spec-card h3 { font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--bronze); text-transform: uppercase; }
+        .spec-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+        /* Estilos de la nueva sección de Sketches */
+        .sketches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .sketch-card { background-color: var(--bg-card); border: 1px solid var(--titanium-dark); padding: 20px; text-align: center; transition: transform 0.3s; }
+        .sketch-card:hover { border-color: var(--bronze); transform: scale(1.02); }
+        .sketch-card a { display: block; }
+        .sketch-card img { width: 100%; height: auto; display: block; border-radius: 4px; }
+        .sketch-card p { color: var(--text-muted); margin-top: 15px; font-size: 0.9rem; }
+
+        .waitlist { text-align: center; background: linear-gradient(to bottom, var(--bg-deep), var(--bg-card)); }
+        .waitlist form { display: flex; justify-content: center; max-width: 500px; margin: 0 auto; gap: 10px; }
+        .waitlist input { flex: 1; padding: 14px 20px; background-color: var(--bg-deep); border: 1px solid var(--titanium-dark); color: var(--text-main); font-family: 'Inter', sans-serif; outline: none; }
+        .waitlist input:focus { border-color: var(--bronze); }
+        .waitlist button { background-color: var(--bronze); color: var(--bg-deep); border: none; padding: 0 25px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; }
+        .waitlist button:hover { background-color: var(--bronze-light); }
+        footer { text-align: center; padding: 40px; border-top: 1px solid var(--titanium-dark); color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { display: none; }
+            .logo-container { justify-content: center; width: 100%; }
+            .waitlist form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo-container">
+            <img src="Anticitera-Logo.png" alt="Anticitera Logo" class="logo-img">
+            <div class="logo-text">ANTICITERA<span>.</span></div>
+        </a>
+        <nav>
+            <a href="#filosofia">Filosofía</a>
+            <a href="#especificaciones">Ingeniería</a>
+            <a href="#bocetos">Bocetos</a>
+            <a href="#contacto">Lista de Espera</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>ANTICITERA</h1>
+        <p>The Art of Time</p>
+        <a href="#contacto" class="btn-primary">Únete a la Preventa</a>
+    </section>
+    <section id="filosofia">
+        <div class="philosophy">
+            <h2 class="section-title">Filosofía <span>Mechanical</span></h2>
+            <p>Anticitera nace de la obsesión por la precisión mecánica y el diseño independiente. Cada pieza está concebida para fusionar la dureza industrial del titanio mate con texturas sutiles en la esfera, rindiendo homenaje a la historia de la relojería bajo una óptica moderna y minimalista.</p>
+        </div>
+    </section>
+    <section id="especificaciones">
+        <h2 class="section-title">Ingeniería y <span>Componentes</span></h2>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <h3>Caja de Titanio</h3>
+                <p>Construcción ligera y altamente resistente con acabado mate texturizado en tonos gris titanio.</p>
+            </div>
+            <div class="spec-card">
+                <h3>Movimiento Automático</h3>
+                <p>Confiabilidad mecánica de alta precisión impulsada por calibres automáticos robustos (NH35).</p>
+            </div>
+            <div class="spec-card">
+                <h3>Esfera Texturizada</h3>
+                <p>Diseños exclusivos con profundidad visual, marcadores limpios y acentos sutiles en tono bronce.</p>
+            </div>
+            <div class="spec-card">
+                <h3>Ergonomía 4H</h3>
+                <p>Corona estratégicamente posicionada a las 4 en punto para ofrecer máxima comodidad en la muñeca.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Bocetos -->
+    <section id="bocetos">
+        <h2 class="section-title">Proceso de <span>Diseño</span></h2>
+        <div class="sketches-grid">
+            <div class="sketch-card">
+                <a href="sketch-1.png" target="_blank"><img src="sketch-1.png" alt="Sketch 1"></a>
+            </div>
+            <div class="sketch-card">
+                <a href="sketch-2.png" target="_blank"><img src="sketch-2.png" alt="Sketch 2"></a>
+            </div>
+            <div class="sketch-card">
+                <a href="sketch-3.png" target="_blank"><img src="sketch-3.png" alt="Sketch 3"></a>
+            </div>
+            <div class="sketch-card">
+                <a href="sketch-4.png" target="_blank"><img src="sketch-4.png" alt="Sketch 4"></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="waitlist">
+        <h2 class="section-title">Primeros <span>Lanzamientos</span></h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Regístrate para recibir acceso exclusivo a los primeros renders, especificaciones de modelos y fechas de lanzamiento oficiales.</p>
+        <form onsubmit="event.preventDefault(); alert('¡Gracias por unirte a ANTICITERA! Te notificaremos pronto.');">
+            <input type="email" placeholder="Tu correo electrónico..." required>
+            <button type="submit">Unirme</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2026 ANTICITERA Watch Co. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
